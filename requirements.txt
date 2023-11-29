@@ -1,0 +1,11 @@
+# Python Scripts - C Dolan - TAMU
+Scripts written for TAMU library tasks
+
+## Convert .mrc file into DublinCore .csv
+### Description
+A tool to convert thesis dissertation MARC record into a DublinCore .csv file for import into DSpace, based on Eric Pennington's 2021 script. This version is a basic program that accounts for some quirks of TAMU dissertation records: looks for thesis degree information in multiple fields. 
+Will need to modify depending on records. 
+### Requirements
+Machine must have at least pymarc==4.0.0
+A file in .mrc format for conversion
+Must provide path for both the .mrc file and the .csv file that the program will create
