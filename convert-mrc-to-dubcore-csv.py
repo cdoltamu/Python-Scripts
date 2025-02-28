@@ -32,13 +32,13 @@ def write_db_from_marc(marc_input, output_file):
 #Write to csv function
 def dictionary_to_csv(dict_data, output_name):
     #Make sure file exists, string trimmed, and ends in .csv
-    if not output_name:
-          csv_filename = 'csv_export.csv'
-    else:
-        if (output_name[0]=='"' and output_name[-1]=='"') or (output_name[0]=="'" and output_name[-1]=="'"):
-            csv_filename=output_name[1:-1]
-            if not csv_filename[-4:] == '.csv':
-                csv_filename = csv_filename + '.csv'
+    csv_filename = output_name
+    if not csv_filename:
+        csv_filename = 'output.csv'
+    if (csv_filename[0]=='"' and csv_filename[-1]=='"') or (csv_filename[0]=="'" and csv_filename[-1]=="'"):
+        csv_filename =csv_filename[1:-1]
+        if not csv_filename[-4:] == '.csv':
+            csv_filename = csv_filename + '.csv'
 
     #if file is blank, create headers
     if not os.path.isfile(csv_filename):
@@ -154,14 +154,7 @@ def get_dc_creator(record):
                 if initial_name[-1] == ',' or '.':
                     formatted_name = initial_name[0:-1].strip()
 
-                # Re-add punctuation for ending initial
-                re_pattern = r'(\s[[A-Z])$'
-                # Run search to see if match found
-                last_is_initial = re.search(re_pattern, formatted_name)
-                if last_is_initial:
-                    formatted_name = formatted_name + '.'
-
-                ls_creator.append(formatted_name)
+                    ls_creator.append(formatted_name)
     
     # Check for 110 field
     if '110' in record:

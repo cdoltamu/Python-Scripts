@@ -6,6 +6,13 @@ Scripts written for TAMU library tasks
 A tool to convert thesis dissertation MARC record into a DublinCore .csv file for import into DSpace, based on Eric Pennington's 2021 script. This version is a basic program that accounts for some quirks of TAMU dissertation records: looks for thesis degree information in multiple fields. 
 Will need to modify depending on records. 
 ### Requirements
+Must have python installed
 Machine must have at least pymarc==4.0.0
 A file in .mrc format for conversion
 Must provide path for both the .mrc file and the .csv file that the program will create
+#### Installing Python and pymarc
+To install python, open either Command Prompt or PowerShell to access the terminal. Type 'python' and hit enter. If python is already installed, this will display the version of python your machine is running and open a python interpreter, which you will want to close by typing Ctrl + Z and pressing Enter. If python is not installed, this will begin the installation.
+Once the python installation is complete, type 'pip install pymarc' into the command line and hit enter to install the pymarc library. 
+### Running the script
+First, change the directory to the folder where you've stored the script by typing 'cd \DIRECTORY NAME' and hitting enter. Then to run this script, type 'python convert-mrc-to-dubcore-csv.py'. 
+The script will then prompt you for your MARC file. Make sure to include the path! Next, the script will prompt you for the name of the csv file you want to create.
